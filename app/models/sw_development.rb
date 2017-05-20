@@ -1,0 +1,2 @@
+class SwDevelopment < ApplicationRecord
+end

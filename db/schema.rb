@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170508150328) do
+ActiveRecord::Schema.define(version: 20170520181840) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,54 @@ ActiveRecord::Schema.define(version: 20170508150328) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+  end
+
+  create_table "audits", force: :cascade do |t|
+    t.string   "security_controls"
+    t.string   "documentation"
+    t.string   "version"
+    t.integer  "interfaces_quantity"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "db_engie_id"
+    t.integer  "operating_system_id"
+    t.integer  "provaider_id"
+  end
+
+  create_table "db_engies", force: :cascade do |t|
+    t.string   "name"
+    t.string   "version"
+    t.string   "documentation"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "operating_systems", force: :cascade do |t|
+    t.string   "name"
+    t.string   "version"
+    t.string   "architecture"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "provaiders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "type_name"
+    t.integer  "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sw_developments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "version"
+    t.string   "documentation"
+    t.string   "source_files"
+    t.string   "executable_files"
+    t.integer  "q_source_files"
+    t.integer  "q_executable_files"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "users", force: :cascade do |t|

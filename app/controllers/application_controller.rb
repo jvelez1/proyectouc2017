@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     unless current_user.admin?
       welcome_index_path
     else
-      admin_dashboard_path
+      admin_users_path
     end
   end
 
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
     unless current_user.admin?
       welcome_index_path
     else
-      admin_dashboard_path
+      admin_users_path
     end
   end
 

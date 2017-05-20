@@ -4,7 +4,7 @@ ActiveAdmin.setup do |config|
   # Set the title that is displayed on the main layout
   # for each of the active admin pages.
   #
-  config.site_title = "Primer"
+  config.site_title = "Web2007"
   config.authentication_method = :authenticate_active_admin_user!
   config.current_user_method   = :current_user
   config.logout_link_path = :destroy_user_session_path
@@ -116,7 +116,7 @@ ActiveAdmin.setup do |config|
   # roots for each namespace.
   #
   # Default:
-  # config.root_to = 'dashboard#index'
+  config.root_to = 'users#index'
 
   # == Admin Comments
   #

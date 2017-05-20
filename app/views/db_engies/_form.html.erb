@@ -1,0 +1,17 @@
+<%= form_for(db_engy) do |f| %>
+  <% if db_engy.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(db_engy.errors.count, "error") %> prohibited this db_engy from being saved:</h2>
+
+      <ul>
+      <% db_engy.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
